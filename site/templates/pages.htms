@@ -46,7 +46,10 @@
         <p class="lead"><textarea name="IMPERIA:head_teaser"  style="width:100%" ROWS="7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</textarea></p>
 
         <?imperia iwe2
-          id: text ?>
+          id: text 
+          customConfig: /imperia/iwe2_config.js
+          toolbar: xs
+          ?>
         <hr>
 
   
