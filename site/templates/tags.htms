@@ -1,0 +1,61 @@
+  <!--CODEINCLUDE:head.htms-->
+
+<body>
+<!--template-description:Seiten für das Workshop-Miniweb-->
+
+#IF(<!--XX-savemode-->)
+  <!-- Navigation -->
+  <!--CODEINCLUDE:nav_tag.htms-->
+#ENDIF
+<!--formstart-->
+  <!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3"><input name="IMPERIA:head_title" style="width:100%" placeholder="Title">
+      <small>
+        <a href="#"><input name="IMPERIA:HTML:head_subtitle" style="width:100%" placeholder="Sub-Title"></a>
+      </small>
+    </h1>
+
+
+    #IF(<!--XX-savemode-->)
+    <!--CODEINCLUDE:breadcrumb_tag.htms-->
+    #ENDIF
+    <IMPERIA lang=perl>
+        use strict;
+        use Imperia;
+        require Imperia::TagStore;
+        my $ts = new Imperia::TagStore;
+        my @uris = $ts->getURIsByTagAndRealm($FORM->{TAG},"Keywords");
+        foreach my $uri (@uris) {
+            my $meta = $imperia->common->{site_meta}->getMeta($uri);
+            print <<EOT;
+            <!-- Project One -->
+            <div class="row">
+              <div class="col-md-7">
+                <a href="@{[$meta->getURI]}">
+                  <img class="img-fluid rounded mb-3 mb-md-0" src="@{[$meta->getValues('head_image') ||'http://placehold.it/700x300']}" alt="">
+                </a>
+              </div>
+              <div class="col-md-5">
+                <h3>@{[$meta->getTitle]}</h3>
+                <p>>@{[$meta->getValues('head_teaser')]}</p>
+                <a class="btn btn-primary" href="@{[$meta->getURI]}">Zu @{[$meta->getTitle]}
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+              </div>
+            </div>
+            <!-- /.row -->
+EOT
+        }
+    </IMPERIA>    
+    <!--CODEINCLUDE:footer.htms-->
+
+  </div>
+  <!-- /.container -->
+<!--formend-->
+
+</body>
+
+</html>
