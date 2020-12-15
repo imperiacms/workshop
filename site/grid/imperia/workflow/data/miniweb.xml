@@ -73,6 +73,8 @@
       <parameter name="value0">&lt;!--SECTION:miniweb--&gt;</parameter>
       <parameter name="key1">filename</parameter>
       <parameter name="value1">&lt;!--XX-NORMALIZE:title--&gt;-&lt;!--DOC_ID:0--&gt;.html</parameter>
+      <parameter name="key2">__miniweb_root</parameter>
+      <parameter name="value2">0</parameter>
       <parameter name="visible_in_route">no</parameter>
       <parameter name="update_document_data">no</parameter>
       <output name="east" destination="8" input="input"/>

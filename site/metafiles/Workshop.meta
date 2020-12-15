@@ -1,0 +1,7 @@
+TITLE = ""
+AUTHOR = " "
+HELPTEXT = "This file has been generated automatically."
+
+
+INPUT "44:title::Document title"
+INPUT "44:keywords:Sample, File, Test:Keywords"
