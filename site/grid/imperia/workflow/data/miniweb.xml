@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow id="miniweb">
+  <header>
+    <label>miniweb</label>
+  </header>
+  <steps>
+    <step id="1">
+      <plugin-ref>Null</plugin-ref>
+      <label>Null</label>
+      <label xml:lang="de">HomePage</label>
+      <position column="1" row="2"/>
+      <parameter name="visible_in_route">no</parameter>
+      <output name="east" destination="2" input="input"/>
+    </step>
+    <step id="2">
+      <plugin-ref>MetaEdit</plugin-ref>
+      <label>Metaedit</label>
+      <label xml:lang="de">Metaedit</label>
+      <position column="3" row="2"/>
+      <parameter name="canceldeletebutton">no</parameter>
+      <parameter name="visible_in_route">yes</parameter>
+      <parameter name="update_document_data">no</parameter>
+      <output name="east" destination="3" input="input"/>
+    </step>
+    <step id="3">
+      <plugin-ref>MetaSetter</plugin-ref>
+      <label>Meta-Setter</label>
+      <label xml:lang="de">Metadaten setzen</label>
+      <position column="5" row="2"/>
+      <parameter name="key0">__imperia_tag_miniweb</parameter>
+      <parameter name="value0">&lt;!--SECTION:miniweb--&gt;</parameter>
+      <parameter name="key1">__miniweb_root</parameter>
+      <parameter name="value1">1</parameter>
+      <parameter name="visible_in_route">no</parameter>
+      <parameter name="update_document_data">no</parameter>
+      <output name="east" destination="4" input="input"/>
+    </step>
+    <step id="4">
+      <plugin-ref>Edit</plugin-ref>
+      <label>Edit</label>
+      <label xml:lang="de">Bearbeiten</label>
+      <position column="9" row="2"/>
+      <parameter name="noPreview">no</parameter>
+      <parameter name="QuickEditDeactivated">no</parameter>
+      <parameter name="canceldeletebutton">no</parameter>
+      <parameter name="visible_in_route">yes</parameter>
+      <parameter name="update_document_data">no</parameter>
+    </step>
+    <step id="5">
+      <plugin-ref>Null</plugin-ref>
+      <label>Null</label>
+      <label xml:lang="de">Seiten</label>
+      <position column="1" row="4"/>
+      <parameter name="visible_in_route">no</parameter>
+      <output name="east" destination="6" input="input"/>
+    </step>
+    <step id="6">
+      <plugin-ref>MetaEdit</plugin-ref>
+      <label>Metaedit</label>
+      <label xml:lang="de">Metaedit</label>
+      <position column="3" row="4"/>
+      <parameter name="canceldeletebutton">no</parameter>
+      <parameter name="visible_in_route">yes</parameter>
+      <parameter name="update_document_data">no</parameter>
+      <output name="east" destination="7" input="input"/>
+    </step>
+    <step id="7">
+      <plugin-ref>MetaSetter</plugin-ref>
+      <label>Meta-Setter</label>
+      <label xml:lang="de">Metadaten setzen</label>
+      <position column="5" row="4"/>
+      <parameter name="key0">__imperia_tag_miniweb</parameter>
+      <parameter name="value0">&lt;!--SECTION:miniweb--&gt;</parameter>
+      <parameter name="key1">filename</parameter>
+      <parameter name="value1">&lt;!--XX-NORMALIZE:title--&gt;-&lt;!--DOC_ID:0--&gt;.html</parameter>
+      <parameter name="visible_in_route">no</parameter>
+      <parameter name="update_document_data">no</parameter>
+      <output name="east" destination="8" input="input"/>
+    </step>
+    <step id="8">
+      <plugin-ref>Miniweb</plugin-ref>
+      <label>MiniWeb</label>
+      <label xml:lang="de">Miniweb</label>
+      <position column="7" row="4"/>
+      <parameter name="maximal_depth_allowed">10</parameter>
+      <parameter name="visible_in_route">yes</parameter>
+      <parameter name="invisible_pages_allowed">no</parameter>
+      <parameter name="document_series_allowed">no</parameter>
+      <parameter name="update_document_data">no</parameter>
+      <output name="east" destination="9" input="input"/>
+    </step>
+    <step id="9">
+      <plugin-ref>Edit</plugin-ref>
+      <label>Edit</label>
+      <label xml:lang="de">Bearbeiten</label>
+      <position column="9" row="4"/>
+      <parameter name="noPreview">no</parameter>
+      <parameter name="QuickEditDeactivated">no</parameter>
+      <parameter name="canceldeletebutton">no</parameter>
+      <parameter name="visible_in_route">yes</parameter>
+      <parameter name="update_document_data">no</parameter>
+    </step>
+    <step id="10">
+      <plugin-ref>Null</plugin-ref>
+      <label>Null</label>
+      <label xml:lang="de">Admin-Seiten</label>
+      <position column="1" row="6"/>
+      <parameter name="visible_in_route">no</parameter>
+      <output name="east" destination="11" input="input"/>
+    </step>
+    <step id="11">
+      <plugin-ref>MetaEdit</plugin-ref>
+      <label>Metaedit</label>
+      <label xml:lang="de">Metaedit</label>
+      <position column="3" row="6"/>
+      <parameter name="canceldeletebutton">no</parameter>
+      <parameter name="visible_in_route">yes</parameter>
+      <parameter name="update_document_data">no</parameter>
+      <output name="east" destination="12" input="input"/>
+    </step>
+    <step id="12">
+      <plugin-ref>Edit</plugin-ref>
+      <label>Edit</label>
+      <label xml:lang="de">Bearbeiten</label>
+      <position column="5" row="6"/>
+      <parameter name="noPreview">no</parameter>
+      <parameter name="QuickEditDeactivated">no</parameter>
+      <parameter name="canceldeletebutton">no</parameter>
+      <parameter name="visible_in_route">yes</parameter>
+      <parameter name="update_document_data">no</parameter>
+    </step>
+  </steps>
+</workflow>
