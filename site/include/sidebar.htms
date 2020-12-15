@@ -28,15 +28,21 @@
                 my @tags = $ts->getStoredTagsForRealm("Keywords");
                 my %my_tags = map {$_ => 1} $metainfo->getValues('__imperia_tag_Keywords');
                 my $split = int((1 + scalar @tags)/2);
+                my $del=0;
                 foreach my $i (0..$#tags) {
                   my ($realm, $tag, $count) = @{$tags[$i]};
+                  if ($count == 0) {
+                    $split = int(((1 + scalar @tags)+ --$del)/2);
+                    next;
+                  }
                   my $current=$my_tags{$tag} ? ' style="font-weight:bold"' : '';
+                  my $link = "/mt/tags/".lc($tag).'/';
                   print <<EOT;
                   <li>
-                    <a href="#"$current>$tag ($count)</a>
+                    <a href="$link"$current>$tag ($count)</a>
                   </li>
 EOT
-                  if($i+1 == $split) {
+                  if($i+1 + $del == $split) {
                     print <<EOT;
                   </ul>
                 </div>
