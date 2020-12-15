@@ -1,8 +1,12 @@
 
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Blog Home 2</li>
-      </ol>
+      #IF (<!--XX-previewmode-->)
+      <li class="breadcrumb-item">
+        <a href="index.html">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Blog Home 2</li>
+      #ELSE
+      <!--SITEACTIVE:SSI=/mt/ssi/breadcrumb/<!--DOC_ID:0-->.ssi-->    <!--/SITEACTIVE-->
+      #ENDIF
+    </ol>
   

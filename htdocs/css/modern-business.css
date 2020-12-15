@@ -27,3 +27,13 @@ body {
 .navbar {
   padding-top: 2.5rem !important;
 }
+
+
+nav .dropdown:hover .dropdown-menu {
+  display: block !important;
+}
+
+.dropdown-menu {
+  margin: 0;
+  padding: 0;
+}

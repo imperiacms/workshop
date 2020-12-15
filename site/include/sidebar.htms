@@ -13,6 +13,45 @@
       </div>
     </div>
 
+    <!-- TAGS Widget -->
+    <!--SITEACTIVE:VERIFY-REALM=Keywords-->
+    <div class="card my-4">
+      <h5 class="card-header">TAGS</h5>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <ul class="list-unstyled mb-0">
+            <IMPERIA lang=perl>
+                use strict;
+                require Imperia::TagStore;
+                my $ts = new Imperia::TagStore;
+                my @tags = $ts->getStoredTagsForRealm("Keywords");
+                my %my_tags = map {$_ => 1} $metainfo->getValues('__imperia_tag_Keywords');
+                my $split = int((1 + scalar @tags)/2);
+                foreach my $i (0..$#tags) {
+                  my ($realm, $tag, $count) = @{$tags[$i]};
+                  my $current=$my_tags{$tag} ? ' style="font-weight:bold"' : '';
+                  print <<EOT;
+                  <li>
+                    <a href="#"$current>$tag ($count)</a>
+                  </li>
+EOT
+                  if($i+1 == $split) {
+                    print <<EOT;
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+     
+EOT
+                  }
+                }
+            </IMPERIA>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <!--/SITEACTIVE-->
     <!-- Categories Widget -->
     <div class="card my-4">
       <h5 class="card-header">Categories</h5>
