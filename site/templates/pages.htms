@@ -59,11 +59,11 @@
 
     </div>
     <!-- /.row -->
-    <!--CODEINCLUDE:footer.htms-->
-
+    
   </div>
   <!-- /.container -->
-<!--formend-->
+  <!--formend-->
+  <!--CODEINCLUDE:footer.htms-->
 
 </body>
 

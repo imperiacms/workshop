@@ -40,21 +40,22 @@
               </div>
               <div class="col-md-5">
                 <h3>@{[$meta->getTitle]}</h3>
-                <p>>@{[$meta->getValues('head_teaser')]}</p>
+                <p>@{[$meta->getValues('head_teaser')]}</p>
                 <a class="btn btn-primary" href="@{[$meta->getURI]}">Zu @{[$meta->getTitle]}
                   <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>
               </div>
             </div>
             <!-- /.row -->
+            <hr>
 EOT
         }
     </IMPERIA>    
-    <!--CODEINCLUDE:footer.htms-->
-
-  </div>
-  <!-- /.container -->
+    
+</div>
+<!-- /.container -->
 <!--formend-->
+<!--CODEINCLUDE:footer.htms-->
 
 </body>
 
