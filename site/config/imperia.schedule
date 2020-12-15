@@ -1,0 +1,3 @@
+# Imperia Scheduler File
+0 DESCR="Tags-Übersicht"
+0:dayzone=daily:timezone1=00:timezone2=00:TEMPLATE=/mt/siteactives/tags.htms:SAVEPAGE=/mt/tags/{tag}/index.html:REALM={realm}:TAG={TAG}:VERIFY-TAGS=Keywords|*
